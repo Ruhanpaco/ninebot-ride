@@ -1,0 +1,583 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		AFC93DC12FCC6E1B004CA86D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AFC93DA92FCC6E19004CA86D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AFC93DB02FCC6E19004CA86D;
+			remoteInfo = "Open Ninebot Ride";
+		};
+		AFC93DCB2FCC6E1B004CA86D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AFC93DA92FCC6E19004CA86D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AFC93DB02FCC6E19004CA86D;
+			remoteInfo = "Open Ninebot Ride";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AFC93DB12FCC6E19004CA86D /* Open Ninebot Ride.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Open Ninebot Ride.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFC93DC02FCC6E1B004CA86D /* Open Ninebot RideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Open Ninebot RideTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFC93DCA2FCC6E1B004CA86D /* Open Ninebot RideUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Open Ninebot RideUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		AFC93DB32FCC6E19004CA86D /* Open Ninebot Ride */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Open Ninebot Ride";
+			sourceTree = "<group>";
+		};
+		AFC93DC32FCC6E1B004CA86D /* Open Ninebot RideTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Open Ninebot RideTests";
+			sourceTree = "<group>";
+		};
+		AFC93DCD2FCC6E1B004CA86D /* Open Ninebot RideUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Open Ninebot RideUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AFC93DAE2FCC6E19004CA86D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFC93DBD2FCC6E1B004CA86D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFC93DC72FCC6E1B004CA86D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AFC93DA82FCC6E19004CA86D = {
+			isa = PBXGroup;
+			children = (
+				AFC93DB32FCC6E19004CA86D /* Open Ninebot Ride */,
+				AFC93DC32FCC6E1B004CA86D /* Open Ninebot RideTests */,
+				AFC93DCD2FCC6E1B004CA86D /* Open Ninebot RideUITests */,
+				AFC93DB22FCC6E19004CA86D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AFC93DB22FCC6E19004CA86D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AFC93DB12FCC6E19004CA86D /* Open Ninebot Ride.app */,
+				AFC93DC02FCC6E1B004CA86D /* Open Ninebot RideTests.xctest */,
+				AFC93DCA2FCC6E1B004CA86D /* Open Ninebot RideUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AFC93DB02FCC6E19004CA86D /* Open Ninebot Ride */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AFC93DD42FCC6E1B004CA86D /* Build configuration list for PBXNativeTarget "Open Ninebot Ride" */;
+			buildPhases = (
+				AFC93DAD2FCC6E19004CA86D /* Sources */,
+				AFC93DAE2FCC6E19004CA86D /* Frameworks */,
+				AFC93DAF2FCC6E19004CA86D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				AFC93DB32FCC6E19004CA86D /* Open Ninebot Ride */,
+			);
+			name = "Open Ninebot Ride";
+			packageProductDependencies = (
+			);
+			productName = "Open Ninebot Ride";
+			productReference = AFC93DB12FCC6E19004CA86D /* Open Ninebot Ride.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AFC93DBF2FCC6E1B004CA86D /* Open Ninebot RideTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AFC93DD72FCC6E1B004CA86D /* Build configuration list for PBXNativeTarget "Open Ninebot RideTests" */;
+			buildPhases = (
+				AFC93DBC2FCC6E1B004CA86D /* Sources */,
+				AFC93DBD2FCC6E1B004CA86D /* Frameworks */,
+				AFC93DBE2FCC6E1B004CA86D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AFC93DC22FCC6E1B004CA86D /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				AFC93DC32FCC6E1B004CA86D /* Open Ninebot RideTests */,
+			);
+			name = "Open Ninebot RideTests";
+			packageProductDependencies = (
+			);
+			productName = "Open Ninebot RideTests";
+			productReference = AFC93DC02FCC6E1B004CA86D /* Open Ninebot RideTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AFC93DC92FCC6E1B004CA86D /* Open Ninebot RideUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AFC93DDA2FCC6E1B004CA86D /* Build configuration list for PBXNativeTarget "Open Ninebot RideUITests" */;
+			buildPhases = (
+				AFC93DC62FCC6E1B004CA86D /* Sources */,
+				AFC93DC72FCC6E1B004CA86D /* Frameworks */,
+				AFC93DC82FCC6E1B004CA86D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AFC93DCC2FCC6E1B004CA86D /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				AFC93DCD2FCC6E1B004CA86D /* Open Ninebot RideUITests */,
+			);
+			name = "Open Ninebot RideUITests";
+			packageProductDependencies = (
+			);
+			productName = "Open Ninebot RideUITests";
+			productReference = AFC93DCA2FCC6E1B004CA86D /* Open Ninebot RideUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AFC93DA92FCC6E19004CA86D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2620;
+				LastUpgradeCheck = 2620;
+				TargetAttributes = {
+					AFC93DB02FCC6E19004CA86D = {
+						CreatedOnToolsVersion = 26.2;
+					};
+					AFC93DBF2FCC6E1B004CA86D = {
+						CreatedOnToolsVersion = 26.2;
+						TestTargetID = AFC93DB02FCC6E19004CA86D;
+					};
+					AFC93DC92FCC6E1B004CA86D = {
+						CreatedOnToolsVersion = 26.2;
+						TestTargetID = AFC93DB02FCC6E19004CA86D;
+					};
+				};
+			};
+			buildConfigurationList = AFC93DAC2FCC6E19004CA86D /* Build configuration list for PBXProject "Open Ninebot Ride" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AFC93DA82FCC6E19004CA86D;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = AFC93DB22FCC6E19004CA86D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AFC93DB02FCC6E19004CA86D /* Open Ninebot Ride */,
+				AFC93DBF2FCC6E1B004CA86D /* Open Ninebot RideTests */,
+				AFC93DC92FCC6E1B004CA86D /* Open Ninebot RideUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AFC93DAF2FCC6E19004CA86D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFC93DBE2FCC6E1B004CA86D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFC93DC82FCC6E1B004CA86D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AFC93DAD2FCC6E19004CA86D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFC93DBC2FCC6E1B004CA86D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFC93DC62FCC6E1B004CA86D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AFC93DC22FCC6E1B004CA86D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AFC93DB02FCC6E19004CA86D /* Open Ninebot Ride */;
+			targetProxy = AFC93DC12FCC6E1B004CA86D /* PBXContainerItemProxy */;
+		};
+		AFC93DCC2FCC6E1B004CA86D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AFC93DB02FCC6E19004CA86D /* Open Ninebot Ride */;
+			targetProxy = AFC93DCB2FCC6E1B004CA86D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		AFC93DD22FCC6E1B004CA86D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 6VK6MLSR6X;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AFC93DD32FCC6E1B004CA86D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 6VK6MLSR6X;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AFC93DD52FCC6E1B004CA86D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6VK6MLSR6X;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ruhanpacolli.Open-Ninebot-Ride";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AFC93DD62FCC6E1B004CA86D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6VK6MLSR6X;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ruhanpacolli.Open-Ninebot-Ride";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AFC93DD82FCC6E1B004CA86D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6VK6MLSR6X;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ruhanpacolli.Open-Ninebot-RideTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Open Ninebot Ride.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Open Ninebot Ride";
+			};
+			name = Debug;
+		};
+		AFC93DD92FCC6E1B004CA86D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6VK6MLSR6X;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ruhanpacolli.Open-Ninebot-RideTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Open Ninebot Ride.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Open Ninebot Ride";
+			};
+			name = Release;
+		};
+		AFC93DDB2FCC6E1B004CA86D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6VK6MLSR6X;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ruhanpacolli.Open-Ninebot-RideUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Open Ninebot Ride";
+			};
+			name = Debug;
+		};
+		AFC93DDC2FCC6E1B004CA86D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6VK6MLSR6X;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ruhanpacolli.Open-Ninebot-RideUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Open Ninebot Ride";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AFC93DAC2FCC6E19004CA86D /* Build configuration list for PBXProject "Open Ninebot Ride" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFC93DD22FCC6E1B004CA86D /* Debug */,
+				AFC93DD32FCC6E1B004CA86D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AFC93DD42FCC6E1B004CA86D /* Build configuration list for PBXNativeTarget "Open Ninebot Ride" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFC93DD52FCC6E1B004CA86D /* Debug */,
+				AFC93DD62FCC6E1B004CA86D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AFC93DD72FCC6E1B004CA86D /* Build configuration list for PBXNativeTarget "Open Ninebot RideTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFC93DD82FCC6E1B004CA86D /* Debug */,
+				AFC93DD92FCC6E1B004CA86D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AFC93DDA2FCC6E1B004CA86D /* Build configuration list for PBXNativeTarget "Open Ninebot RideUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFC93DDB2FCC6E1B004CA86D /* Debug */,
+				AFC93DDC2FCC6E1B004CA86D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AFC93DA92FCC6E19004CA86D /* Project object */;
+}
