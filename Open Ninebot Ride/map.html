@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #1a1a2e; overflow: hidden; }
+        #map { width: 100vw; height: 100dvh; background: #1a1a2e; }
+        .leaflet-control-zoom { display: none; }
+        .leaflet-control-attribution { display: none; }
+        
+        #overlay {
+            position: fixed; bottom: 20px; left: 12px;
+            background: rgba(0,0,0,0.7); backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 12px; padding: 10px 14px;
+            color: white; font-family: -apple-system, sans-serif;
+            display: flex; align-items: center; gap: 12px;
+            z-index: 1000; min-width: 160px;
+        }
+        #speed-display { text-align: center; }
+        #speed-value { font-size: 30px; font-weight: 800; line-height: 1; }
+        #speed-unit { font-size: 10px; color: #888; }
+        #info-display { display: flex; flex-direction: column; gap: 2px; }
+        .info-row { display: flex; align-items: center; gap: 4px; font-size: 12px; }
+        .info-row .icon { width: 14px; text-align: center; }
+        .divider { width: 1px; height: 30px; background: rgba(255,255,255,0.2); }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <div id="overlay">
+        <div id="speed-display">
+            <div id="speed-value">0</div>
+            <div id="speed-unit">km/h</div>
+        </div>
+        <div class="divider"></div>
+        <div id="info-display">
+            <div class="info-row"><span class="icon">⚡</span><span id="mode-text">Drive</span></div>
+            <div class="info-row"><span class="icon">💡</span><span id="lights-text">OFF</span></div>
+        </div>
+    </div>
+    <script>
+        const map = L.map('map', {
+            center: [52.3676, 4.9041],
+            zoom: 15,
+            zoomControl: false,
+            attributionControl: false
+        });
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            minZoom: 3
+        }).addTo(map);
+
+        let routeLayer = null;
+        let userMarker = null;
+
+        function speedColor(speed) {
+            if (speed < 8) return '#22c55e';
+            if (speed < 16) return '#eab308';
+            if (speed < 24) return '#f97316';
+            return '#ef4444';
+        }
+
+        function setRoute(pointsJson) {
+            if (routeLayer) map.removeLayer(routeLayer);
+            const points = JSON.parse(pointsJson);
+            if (!points || points.length < 2) return;
+
+            const segments = [];
+            for (let i = 0; i < points.length - 1; i++) {
+                const p1 = points[i];
+                const p2 = points[i + 1];
+                const avgSpeed = (p1.speed + p2.speed) / 2;
+                const color = speedColor(avgSpeed);
+                const segment = L.polyline([
+                    [p1.lat, p1.lng],
+                    [p2.lat, p2.lng]
+                ], {
+                    color: color,
+                    weight: 4,
+                    opacity: 0.9,
+                    smoothFactor: 0
+                });
+                segments.push(segment);
+            }
+            routeLayer = L.layerGroup(segments).addTo(map);
+
+            const lats = points.map(p => p.lat);
+            const lngs = points.map(p => p.lng);
+            const bounds = L.latLngBounds(
+                [Math.min(...lats), Math.min(...lngs)],
+                [Math.max(...lats), Math.max(...lngs)]
+            );
+            if (bounds.isValid()) map.fitBounds(bounds, { padding: [40, 40] });
+        }
+
+        function updateOverlay(speed, mode, lights) {
+            const el = document.getElementById('speed-value');
+            el.textContent = Math.round(speed);
+            const c = speedColor(speed);
+            el.style.color = c;
+
+            document.getElementById('mode-text').textContent = mode || 'Drive';
+            document.getElementById('lights-text').textContent = lights ? 'ON' : 'OFF';
+        }
+
+        function centerMap(lat, lng) {
+            map.setView([lat, lng], map.getZoom());
+        }
+
+        function updateUserLocation(lat, lng) {
+            if (userMarker) {
+                userMarker.setLatLng([lat, lng]);
+            } else {
+                userMarker = L.circleMarker([lat, lng], {
+                    radius: 8, color: '#3b82f6',
+                    fillColor: '#60a5fa', fillOpacity: 0.8,
+                    weight: 2
+                }).addTo(map);
+            }
+        }
+
+        function clearRoute() {
+            if (routeLayer) { map.removeLayer(routeLayer); routeLayer = null; }
+        }
+    </script>
+</body>
+</html>

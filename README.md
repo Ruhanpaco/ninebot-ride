@@ -16,7 +16,7 @@ Reads live telemetry — speed, battery, voltage, current, ride recording — fr
 - Live register polling (speed, battery, voltage, current)
 - Ride recording with GPS tracking
 - iOS Live Activity support
-- Simulator mode for UI development
+
 
 ## Scooter Support
 
@@ -47,7 +47,7 @@ Requires Xcode 15+ and iOS 17+.
 open "Open Ninebot Ride.xcodeproj"
 ```
 
-Select your team in Signing & Capabilities, then build and run on a real iOS device (the simulator uses mock data).
+Select your team in Signing & Capabilities, then build and run on a real iOS device.
 
 ## How It Works
 
