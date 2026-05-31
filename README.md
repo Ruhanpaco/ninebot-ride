@@ -1,22 +1,22 @@
 # Ninebot Ride
 
-An open-source iOS app for connecting to Segway-Ninebot electric scooters over Bluetooth Low Energy.
+**Open-source iOS app** that connects to Segway-Ninebot electric scooters over Bluetooth Low Energy, reads live telemetry, records rides with GPS tracking, and generates EDR (Event Data Recorder) reports.
 
-Reads live telemetry — speed, battery, voltage, current, ride recording — from the scooter's BLE interface using the **Encryption2 protocol**.
-
-> **Status: work in progress.** The BLE connection and encryption handshake are implemented, but authentication against real hardware is still being debugged. Contributions welcome.
+Built for riders, tinkerers, and anyone who wants full access to their scooter's data without proprietary apps.
 
 ---
 
 ## Features
 
-- BLE scan + connect to Ninebot scooters (E2 Pro, F-series, Max G2, ES, GT, and more)
-- AES-128-ECB + SHA-1 key derivation per Encryption2 spec
-- 3-phase auth handshake: PRE_COMM → SET_PWD → AUTH
-- Live register polling (speed, battery, voltage, current)
-- Ride recording with GPS tracking
-- iOS Live Activity support
-
+- **BLE Scan & Connect** — discover nearby Ninebot scooters, connect, and authenticate using the official Encryption2 protocol
+- **Live Dashboard** — real-time speed gauge, battery level, voltage, current, acceleration, brake detection, turn signals, and riding mode (Eco/Drive/Sport)
+- **Ride Recording** — GPS-tracked rides with continuous speed, mode, lights, battery, voltage, and current logging
+- **Event Detection** — automatically detects hard braking, rapid acceleration, and mode changes during a ride
+- **Ride History** — browse past rides with distance, max speed, average speed, acceleration metrics, and event count
+- **Export & EDR Reports** — export all ride data as JSON, or generate a styled PDF Event Data Recorder report
+- **Live Activity** — keeps your speed, mode, and battery visible on the iOS Dynamic Island and Lock Screen during a ride
+- **Map View** — see your recorded route overlaid with speed-colored segments and event markers
+- **Settings & Data Management** — view paired scooters, manage ride data, export or delete
 
 ## Scooter Support
 
@@ -32,16 +32,91 @@ Reads live telemetry — speed, battery, voltage, current, ride recording — fr
 | ES | ES1, ES2, ES4 | Legacy (Gen2) |
 | Other | SNSC, ZING, Air T, D Series | Mixed |
 
+## How It Works
+
+### 1. Bluetooth Connection
+
+The app scans for Ninebot devices advertising the Ninebot Custom BLE service (`6e400001-0000-0000-006e-696e65626f74`). Once discovered, it connects and finds the UART-style write (`0002`) and notify (`0004`) characteristics.
+
+### 2. Encrypted Authentication (Encryption2)
+
+Ninebot Gen3 scooters (E2 Pro, F2, Max G2, GT, P-series) use a three-phase encrypted handshake:
+
+1. **PRE_COMM (0x5B)** — send an initial encrypted frame to request the scooter's auth parameter and serial number
+2. **SET_PWD (0x5C)** — generate a time-based session password, encrypt it, and send it to the scooter
+3. **AUTH (0x5D)** — prove identity with the password; on success the scooter opens its register interface
+
+The crypto layer uses:
+- **AES-128-ECB** for frame encryption/decryption
+- **SHA-1** for key derivation from the scooter's BLE name
+- **CBC-MAC** for message authentication in SN mode
+- **Complement-of-sum checksum** for non-SN integrity
+
+### 3. Live Data Polling
+
+After authentication, the app polls controller registers at 1 Hz to read:
+- Speed (km/h)
+- Battery level (%)
+- Voltage (V) and current (A)
+- Acceleration / deceleration
+- Brake state
+- Turn signal state
+- Riding mode
+- Lights on/off
+- Odometer (km)
+
+### 4. Ride Recording
+
+When recording, the app stores a `Ride` object in SwiftData with:
+- Start/end timestamps and duration
+- Route as a series of `RidePoint` records (timestamp, GPS coordinate, speed, mode, lights, battery, voltage, current, acceleration, brake state)
+- Detected events as `EventRecord` entries (hard brake, rapid acceleration, mode change)
+- Derived stats: max/min/average speed, total distance, max acceleration/deceleration
+
+### 5. EDR Reports
+
+The PDF exporter generates a forensic-style Event Data Recorder report containing:
+- Ride summary (date, duration, distance, speed stats)
+- Speed graph
+- Event timeline
+- All raw data points
+- Event Data Markers
+
 ## Project Structure
 
-- `Services/NinebotCrypto.swift` — AES-128-ECB encryption, SHA-1 key derivation, CBC-MAC, password generation, three-phase handshake state machine
-- `Services/NinebotProtocol.swift` — Frame builder/parser, BLE service/characteristic UUIDs, BoardID enum, device model detection
-- `Services/ScooterManager.swift` — Bluetooth lifecycle, auth flow, register polling, ride recording
-- `Services/BLEScanner.swift` — Central manager, scanning, connection with continuation pattern
+```
+Services/
+├── NinebotCrypto.swift      # AES-128-ECB, SHA-1 key derivation, CBC-MAC, password gen, handshake state machine
+├── NinebotProtocol.swift     # Frame builder/parser, BLE UUIDs, BoardID enum, device model detection
+├── ScooterManager.swift      # Bluetooth lifecycle, auth flow, register polling, ride recording
+├── BLEScanner.swift          # Central manager, scanning, connection with continuation pattern
+├── LiveActivityManager.swift # iOS Live Activity / Dynamic Island updates
+Models/
+├── Scooter.swift             # SwiftData model for paired scooter
+├── Ride.swift                # SwiftData model for a ride
+├── RidePoint.swift           # SwiftData model for individual data point
+├── EventRecord.swift         # SwiftData model for detected events
+Views/
+├── DashboardView.swift       # Speed gauge, stats, ride controls
+├── ConnectView.swift         # BLE scan, connect, connection status
+├── MapPage.swift             # Map with route overlay, recording controls, live HUD
+├── RideHistoryView.swift     # List of past rides
+├── RideDetailView.swift      # Detailed ride stats + map replay
+├── SettingsView.swift        # Scooters, data management, about
+├── BlackBoxView.swift        # EDR report viewer
+├── ScooterPickerView.swift   # BLE device selection sheet
+├── MapWithRouteView.swift    # MapKit wrapper with route + event annotations
+├── CircularGauge.swift       # Custom speed gauge component
+Utilities/
+├── PDFExporter.swift         # EDR report PDF generation
+├── EventDetector.swift       # Real-time event detection logic
+├── SpeedGradient.swift       # Speed color mapping for map overlays
+├── DashboardStyle.swift      # Shared styling helpers
+```
 
 ## Building
 
-Requires Xcode 15+ and iOS 17+.
+Requires **Xcode 15+** and **iOS 17+**.
 
 ```bash
 open "Open Ninebot Ride.xcodeproj"
@@ -49,21 +124,16 @@ open "Open Ninebot Ride.xcodeproj"
 
 Select your team in Signing & Capabilities, then build and run on a real iOS device.
 
-## How It Works
-
-1. **BLE connect** — scan for Ninebot devices, connect, discover UART service
-2. **Auth handshake** — three encrypted messages establish a session key:
-   - `PRE_COMM (0x5B)` → get auth parameter and serial number
-   - `SET_PWD (0x5C)` → send a time-based session password
-   - `AUTH (0x5D)` → prove identity with the password
-3. **Register polling** — read real-time data from the controller (speed, battery, etc.) at 1 Hz
-4. **Ride recording** — log GPS + scooter data to a local SwiftData store
-
-All communication uses the Ninebot Custom BLE service (`6e400001-0000-0000-006e-696e65626f74`) with write characteristic `0002` and notify characteristic `0004`.
+> BLE and Core Location require real hardware — the iOS simulator does not support Bluetooth or GPS.
 
 ## Protocol Reference
 
-This project follows the [Segway-Ninebot BLE Protocol](https://nootnooot.codeberg.page/segway-ninebot-ble/) documentation — reverse-engineered for interoperability under EU Directive 2009/24/EC.
+This project follows the [Segway-Ninebot BLE Protocol](https://nootnooot.codeberg.page/segway-ninebot-ble/) documentation, which has been reverse-engineered to enable third-party interoperability under EU Directive 2009/24/EC.
+
+Related projects and references:
+- [segway-ninebot-ble](https://github.com/EGGreat/segway-ninebot-ble) — JavaScript implementation for Web BLE
+- [Esco-NBIOT](https://github.com/EGGreat/Esco-NBIOT) — Flutter app with Ninebot BLE support
+- [ninebot-ble](https://github.com/elordin/ninebot-ble) — Python library for Ninebot protocol
 
 ## ⚠️ Looking for Contributors
 
@@ -79,4 +149,17 @@ If you can help, please open an issue or pull request. Every bit helps.
 
 ## License
 
-MIT
+Copyright (C) 2024-2026  Open Ninebot Ride Contributors
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
